@@ -1,0 +1,830 @@
+/* Basic Reset & Global Styles */
+body {
+    font-family: Arial, sans-serif; /* Use your preferred font, e.g., 'Roboto', sans-serif; */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #333;
+}
+
+/* --- Header / Navbar Styles --- */
+.navbar {
+    background-color: #3b5998; /* Dark blue background from screenshot */
+    padding: 15px 0;
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.logo img {
+    height: 40px; /* Adjust logo height */
+    margin-right: 10px;
+}
+
+.nav-links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-links ul li {
+    margin-left: 30px;
+    position: relative; /* For dropdown */
+}
+
+.nav-links ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.05em;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.nav-links ul li a:hover,
+.nav-links ul li a.active {
+    color: #007bff; /* Bright blue for hover/active */
+}
+
+/* Dropdown specific styles (if you implement a dropdown) */
+/* .nav-links .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #2a3d4a;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px;
+    top: 100%;
+    left: 0;
+    padding: 10px 0;
+}
+
+.nav-links .dropdown-content a {
+    color: #fff;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.nav-links .dropdown-content a:hover {
+    background-color: #007bff;
+}
+
+.nav-links .dropdown:hover .dropdown-content {
+    display: block;
+} */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--white);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px;
+    overflow: hidden;
+    top: 100%; /* Position below the Services link */
+    left: 0;
+}
+
+.dropdown-content a {
+    color: var(--text-dark);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--light-blue);
+    color: var(--primary-blue);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+.quote-button {
+    background-color: #007bff; /* Bright blue button */
+    color: #fff;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.quote-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* --- Hero Section Styles --- */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Adjust height as needed */
+    background-image: url('Images/Screenshot\ 2025-06-12\ 152226.png'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center; /* Vertically center content */
+    justify-content: flex-start; /* Align content to the left */
+    color: #fff;
+    text-align: left;
+    padding-left: 20px; /* Padding for the content */
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto; /* Center content horizontally */
+    padding-left: 40px; /* Further push content to the right from the max-width container */
+}
+
+.breadcrumb {
+    font-size: 0.9em;
+    margin-bottom: 10px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.breadcrumb a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.breadcrumb a:hover {
+    color: #fff;
+}
+
+.breadcrumb .separator {
+    margin: 0 8px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.hero-content h1 {
+    font-size: 2.8em; /* Adjust font size */
+    margin: 0;
+    line-height: 1.2;
+    color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .navbar-container {
+        flex-wrap: wrap; /* Allow items to wrap */
+        justify-content: center; /* Center items when wrapped */
+    }
+
+    .nav-links {
+        order: 3; /* Push nav links below logo and button */
+        flex-basis: 100%; /* Take full width */
+        margin-top: 20px;
+    }
+
+    .nav-links ul {
+        justify-content: center; /* Center navigation items */
+        flex-wrap: wrap;
+    }
+
+    .nav-links ul li {
+        margin: 0 15px 10px; /* Adjust spacing for wrapped items */
+    }
+
+    .quote-button {
+        margin-left: auto; /* Push button to the right, or adjust as desired */
+    }
+
+    .hero-section {
+        height: 300px; /* Reduce height on smaller screens */
+    }
+
+    .hero-content {
+        padding-left: 20px; /* Adjust padding */
+        text-align: center; /* Center text for smaller screens */
+        width: 100%; /* Take full width */
+    }
+
+    .hero-content h1 {
+        font-size: 2em; /* Smaller font size for heading */
+    }
+
+    .breadcrumb {
+        justify-content: center; /* Center breadcrumb */
+        display: flex;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-container {
+        padding: 0 15px;
+    }
+
+    .logo {
+        font-size: 1.3em;
+    }
+
+    .logo img {
+        height: 35px;
+    }
+
+    .nav-links ul li {
+        margin: 0 10px 10px;
+    }
+
+    .quote-button {
+        padding: 8px 20px;
+        font-size: 0.9em;
+    }
+
+    .hero-section {
+        height: 250px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .quote-button {
+        margin-top: 15px;
+        margin-left: 0;
+    }
+
+    .nav-links ul {
+        flex-direction: column; /* Stack nav items vertically */
+        align-items: center;
+    }
+
+    .nav-links ul li {
+        margin: 10px 0; /* More vertical spacing */
+    }
+
+    .hero-section {
+        height: 200px;
+        padding-left: 0; /* Remove padding */
+    }
+
+    .hero-content {
+        padding: 0 15px; /* Add general horizontal padding */
+    }
+
+    .hero-content h1 {
+        font-size: 1.5em;
+    }
+}
+
+.pro{
+    text-align: center;
+    font-size: 30px;
+}
+.h12{
+    color: #0056b3;
+    text-align: center;
+}
+
+/* Basic Reset & Global Styles */
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* --- Project Details Section (Reusable for 01, 02 etc.) --- */
+.project-details-section {
+    padding: 80px 0; /* Top and bottom padding */
+    background-color: #fff; /* White background for the section */
+    margin-bottom: 40px; /* Add some margin if multiple sections are stacked */
+}
+
+.project-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.project-number {
+    font-size: 3.5em; /* Large number */
+    font-weight: 700;
+    color: #e0e0e0; /* Light gray for the number */
+    display: block;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.project-header h2 {
+    font-size: 2.2em; /* Main heading size */
+    color: #2c3e50; /* Darker text */
+    margin: 0;
+    font-weight: 600;
+}
+
+.project-images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns */
+    gap: 30px; /* Space between images */
+    justify-content: center; /* Center grid items */
+    align-items: stretch; /* Ensure cards stretch to fill row height */
+}
+
+.image-card {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden; /* Ensures image corners are rounded */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); /* Soft shadow */
+    position: relative; /* For overlay content */
+    display: flex;
+    flex-direction: column; /* Ensure content is stacked */
+    justify-content: space-between; /* Push image and text apart if variable height */
+}
+
+.image-card img {
+    width: 100%;
+    height: 100%; /* Make image fill the card */
+    object-fit: cover; /* Cover the area, cropping if necessary */
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.image-card:hover img {
+    transform: scale(1.03); /* Subtle zoom effect on hover */
+}
+
+/* Specific styling for the middle image with text overlay */
+.text-overlay-image {
+    background-color: #007bff; /* Blue background for the overlay card */
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Push content to bottom */
+    padding-top: 0; /* Reset padding from general card */
+}
+
+.text-overlay-image img {
+    /* The image should appear behind the text, or within a div that takes less space */
+    /* For this specific layout, we might layer it or make the overlay dominant */
+    height: 70%; /* Image takes top portion */
+    max-height: 70%; /* Adjust as needed */
+    object-fit: cover;
+    margin-bottom: -5px; /* Adjust to remove gap if any */
+}
+
+.overlay-content {
+    background-color: #007bff; /* Blue background for the text part */
+    padding: 30px;
+    text-align: center;
+    position: relative; /* For the button position */
+    z-index: 2; /* Ensure text is above image if layered differently */
+    flex-grow: 1; /* Allow text content to fill remaining space */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.overlay-content h3 {
+    font-size: 1.6em;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.overlay-content p {
+    font-size: 0.95em;
+    line-height: 1.6;
+    margin-bottom: 25px; /* Space before button */
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.details-button {
+    background-color: #fff; /* White button */
+    color: #007bff; /* Blue icon color */
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    text-decoration: none;
+    margin: 0 auto; /* Center the button */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.details-button:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-3px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .project-images {
+        grid-template-columns: 1fr; /* Stack columns on smaller screens */
+        gap: 40px; /* More space between stacked items */
+    }
+
+    .project-details-section {
+        padding: 60px 0;
+    }
+
+    .project-header h2 {
+        font-size: 1.8em;
+    }
+
+    .image-card.wide-image,
+    .image-card.text-overlay-image {
+        max-width: 500px; /* Limit width of stacked cards */
+        margin: 0 auto; /* Center them */
+    }
+}
+
+@media (max-width: 600px) {
+    .project-details-section {
+        padding: 40px 0;
+    }
+
+    .project-header {
+        margin-bottom: 40px;
+    }
+
+    .project-number {
+        font-size: 2.8em;
+    }
+
+    .project-header h2 {
+        font-size: 1.5em;
+    }
+
+    .overlay-content {
+        padding: 25px 20px;
+    }
+
+    .overlay-content h3 {
+        font-size: 1.4em;
+    }
+
+    .overlay-content p {
+        font-size: 0.9em;
+    }
+
+    .details-button {
+        width: 50px;
+        height: 50px;
+        font-size: 1.3em;
+    }
+}
+
+@media (max-width: 400px) {
+    .project-header h2 {
+        font-size: 1.3em;
+    }
+}
+/* Container for responsiveness */
+.container, .footer-container {
+    max-width: 1200px; /* Adjust as needed */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Pre-footer Section (if it's a separate section) */
+.pre-footer {
+    background-color: #fff; /* White background */
+    padding: 40px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow */
+}
+
+.pre-footer .container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.feature-item {
+    flex: 1; /* Allows items to grow/shrink */
+    min-width: 250px; /* Minimum width before wrapping */
+    padding: 20px;
+    background-color: #f8f8f8; /* Light background for items */
+    border-radius: 8px;
+    text-align: center;
+}
+
+.feature-item i {
+    font-size: 3em;
+    color: #007bff; /* Example primary color */
+    margin-bottom: 10px;
+}
+
+.feature-item h3 {
+    font-size: 1.5em;
+    color: #333;
+}
+
+/* Import Font Awesome for icons */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
+
+
+.main-footer {
+    background-color: #3b5998; /* Dark blue background from image */
+    color: #e0e0e0; /* Light text color */
+    padding: 40px 20px 20px; /* Top, horizontal, bottom padding */
+}
+
+.footer-content-wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 0.5fr; /* Adjust column widths as needed */
+    gap: 30px; /* Space between columns */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 40px; /* Space above copyright notice */
+}
+
+.footer-column {
+    text-align: left;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.footer-logo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: white; /* White background for the logo circle */
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.footer-logo span {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: white; /* White text for ZAHRIX */
+}
+
+.tagline {
+    font-size: 0.9em;
+    line-height: 1.5;
+    margin-bottom: 25px;
+    color: #c0c0c0;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.contact-item .icon-circle {
+    background-color: #5d7cb6; /* Slightly lighter blue for icon circle */
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0; /* Prevent icon from shrinking */
+}
+
+.contact-item .icon-circle i {
+    color: white; /* White icons */
+    font-size: 1em;
+}
+
+.contact-item p {
+    margin: 0;
+    font-size: 0.95em;
+    color: #e0e0e0;
+}
+
+.footer-column h4 {
+    font-size: 1.2em;
+    color: white;
+    margin-bottom: 20px;
+    position: relative; /* For the underline */
+    padding-bottom: 5px;
+}
+
+/* Underline for headings */
+.footer-column h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px; /* Adjust length of underline */
+    height: 2px;
+    background-color: #007bff; /* Blue underline */
+}
+
+.subscribe-form {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.subscribe-form input[type="email"] {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border: 1px solid #5d7cb6; /* Border color */
+    border-radius: 5px 0 0 5px;
+    background-color: white; /* White input background */
+    color: #333; /* Input text color */
+    outline: none;
+    font-size: 0.9em;
+}
+
+.subscribe-form input[type="email"]::placeholder {
+    color: #888;
+}
+
+.subscribe-form button {
+    background-color: #1a1a1a; /* Dark button background */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.subscribe-form button:hover {
+    background-color: #007bff; /* Blue on hover */
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 0.95em;
+    transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.social-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between social icons */
+    align-items: center; /* Center icons horizontally in their column */
+}
+
+.social-icon-circle {
+    background-color: #e0e0e0; /* Light background for social icons */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.social-icon-circle i {
+    color: #3b5998; /* Dark blue icon color */
+    font-size: 1.2em;
+}
+
+.social-icon-circle:hover {
+    background-color: white;
+}
+.social-icon-circle:hover i {
+    color: #007bff; /* Blue on hover for consistency */
+}
+
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Light separator line */
+    font-size: 0.85em;
+    color: #c0c0c0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .footer-content-wrapper {
+        grid-template-columns: 1fr 1fr; /* Two columns on medium screens */
+    }
+    .company-info {
+        grid-column: span 2; /* Company info spans two columns */
+        margin-bottom: 30px;
+    }
+    .subscribe-section,
+    .quick-links,
+    .useful-links,
+    .social-icons {
+        grid-column: span 1; /* Each takes one column */
+        margin-bottom: 30px;
+    }
+    .footer-column {
+        text-align: center; /* Center text for stacked columns */
+    }
+    .footer-logo {
+        justify-content: center; /* Center logo */
+    }
+    .contact-item {
+        justify-content: center; /* Center contact items */
+    }
+    .footer-column h4::after {
+        left: 50%;
+        transform: translateX(-50%); /* Center underline */
+    }
+    .social-icons {
+        flex-direction: row; /* Row for social icons on medium screens */
+        grid-column: span 2; /* Social icons span both columns */
+        justify-content: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-content-wrapper {
+        grid-template-columns: 1fr; /* Single column on small screens */
+    }
+    .company-info,
+    .subscribe-section,
+    .quick-links,
+    .useful-links,
+    .social-icons {
+        grid-column: span 1; /* All span full width */
+        margin-bottom: 25px;
+    }
+    .subscribe-form {
+        flex-direction: column; /* Stack input and button */
+        align-items: center;
+    }
+    .subscribe-form input[type="email"] {
+        border-radius: 5px;
+        width: 80%; /* Adjust width */
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    .subscribe-form button {
+        border-radius: 5px;
+        width: 80%; /* Adjust width */
+    }
+    .social-icons {
+        padding-bottom: 20px; /* Add space below social icons */
+    }
+}

@@ -1,0 +1,825 @@
+/* Basic Reset & Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f0f2f5; /* A light background for the page */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+.main-header {
+    background-color: #3f51b5; /* Deep blue from screenshot */
+    color: #fff;
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+}
+
+.logo img {
+    margin-right: 10px;
+    border-radius: 5px; /* Adjust if logo is not square or needs different styling */
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav ul li {
+    position: relative; /* For dropdowns */
+    margin: 0 15px;
+}
+
+.main-nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 400;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.main-nav ul li a:hover {
+    color: #e0e0e0;
+}
+
+.main-nav .dropdown .fas {
+    margin-left: 5px;
+    font-size: 0.8em;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--white);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px;
+    overflow: hidden;
+    top: 100%; /* Position below the Services link */
+    left: 0;
+}
+
+.dropdown-content a {
+    color: var(--text-dark);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--light-blue);
+    color: var(--primary-blue);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+/* Hero Section Styles */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 600px; /* Adjust height as needed */
+    overflow: hidden;
+    display: flex; /* To center content */
+    align-items: center; /* Vertically center content */
+}
+
+.hero-background-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the area */
+    z-index: 1; /* Below overlay */
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Darkens the image */
+    z-index: 2; /* Above image, below content */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3; /* Above overlay */
+    width: 100%; /* Ensure content respects container max-width */
+    display: flex;
+    justify-content: flex-end; /* Push content to the right */
+    padding-right: 40px; /* Add some padding from the right edge */
+}
+
+.hero-text-right {
+    text-align: right;
+    color: #fff;
+    max-width: 500px; /* Limit width of text block */
+}
+
+.hero-text-right .breadcrumb {
+    font-size: 1.1em;
+    font-weight: 300;
+    margin-bottom: 10px;
+    color: rgba(255, 255, 255, 0.8); /* Slightly faded for breadcrumb */
+}
+
+.hero-text-right .breadcrumb .separator {
+    margin: 0 5px;
+}
+
+.hero-text-right h1 {
+    font-size: 3.5em; /* Large heading */
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 0;
+}
+
+/* Basic Responsiveness */
+@media (max-width: 992px) {
+    .header-content {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .main-nav ul {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    .main-nav ul li {
+        margin: 0 10px;
+    }
+
+    .btn-get-quote {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-text-right {
+        text-align: center;
+        padding-right: 20px;
+        padding-left: 20px;
+        max-width: none; /* Allow text to take more width */
+    }
+
+    .hero-text-right h1 {
+        font-size: 2.8em;
+    }
+
+    .hero-content {
+        justify-content: center; /* Center content horizontally */
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        height: 500px; /* Adjust height for smaller screens */
+    }
+
+    .main-nav ul li {
+        margin: 0 8px;
+    }
+
+    .main-nav ul li a {
+        font-size: 0.9em;
+    }
+
+    .btn-get-quote {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 576px) {
+    .main-header {
+        padding: 10px 0;
+    }
+
+    .logo {
+        font-size: 1.2em;
+    }
+
+    .main-nav ul {
+        flex-direction: column; /* Stack nav items */
+        align-items: center;
+    }
+
+    .main-nav ul li {
+        margin: 5px 0;
+    }
+
+    .hero-section {
+        height: 400px;
+    }
+
+    .hero-text-right h1 {
+        font-size: 2em;
+    }
+
+    .hero-text-right .breadcrumb {
+        font-size: 0.9em;
+    }
+}
+/* Basic Reset & Global Styles (from previous examples) */
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Contact Form Section (from previous example) */
+.contact-form-section {
+    padding: 80px 0;
+    background-color: #ffffff; /* White background for this section */
+}
+
+.section-header-center {
+    text-align: center;
+    margin-bottom: 60px; /* Space below the main header */
+}
+
+.section-header-center h2 {
+    font-size: 2.8em;
+    color: #2c3e50; /* Dark blue/grey */
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.section-header-center p {
+    font-size: 1.1em;
+    color: #666;
+}
+
+/* Booking Service Block (from previous example) */
+.booking-service-block {
+    max-width: 900px; /* Adjust width of the form block */
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #fcfcfc; /* Slightly off-white for the form background */
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.booking-service-block h3 {
+    font-size: 2em;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.booking-service-block h3 .fas {
+    color: #007bff; /* Blue for the lightning bolt icon */
+    margin-left: 10px;
+    font-size: 0.9em; /* Slightly smaller than text */
+}
+
+.booking-service-block p {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 30px;
+    line-height: 1.7;
+}
+
+/* Booking Form Grid (from previous example) */
+.booking-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns */
+    gap: 25px; /* Space between form groups */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 0.95em;
+    color: #333;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="date"], /* Added for date input */
+.form-group input[type="time"], /* Added for time input */
+.form-group textarea {
+    width: 100%;
+    padding: 15px 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    color: #333;
+    background-color: #f9f9f9;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #a0a0a0; /* Lighter color for placeholder text */
+    font-weight: 300;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #007bff; /* Blue border on focus */
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+/* Checkbox specific styles */
+.privacy-checkbox-group {
+    grid-column: 1 / -1; /* Make checkbox span full width */
+    flex-direction: row; /* Align checkbox and label horizontally */
+    align-items: center;
+    margin-top: 15px; /* Space above checkbox */
+    margin-bottom: 25px; /* Space below checkbox before button */
+}
+
+.privacy-checkbox-group input[type="checkbox"] {
+    width: 20px; /* Size of the checkbox */
+    height: 20px;
+    margin-right: 12px;
+    cursor: pointer;
+    /* Custom checkbox styling (optional, more complex for cross-browser consistency) */
+    appearance: none; /* Hide default checkbox */
+    -webkit-appearance: none;
+    border: 2px solid #5a7ea8; /* Blue border */
+    border-radius: 4px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #5a7ea8; /* Blue fill when unchecked */
+}
+
+.privacy-checkbox-group input[type="checkbox"]:checked {
+    background-color: #5a7ea8; /* Blue fill when checked */
+    border-color: #5a7ea8;
+}
+
+/* Custom checkmark (optional, for custom checkbox appearance) */
+.privacy-checkbox-group input[type="checkbox"]:checked::before {
+    content: '\2713'; /* Unicode checkmark character */
+    font-size: 16px;
+    color: #fff;
+}
+
+
+.privacy-checkbox-group label {
+    margin-bottom: 0; /* Remove bottom margin for label */
+    font-weight: 400; /* Lighter font weight for checkbox label */
+    color: #555;
+    cursor: pointer;
+}
+
+/* Submit Button */
+.submit-button {
+    grid-column: 1 / -1; /* Make button span full width */
+    background-color: #5a7ea8; /* Blue color from your screenshot */
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    display: inline-flex; /* For icon alignment */
+    align-items: center;
+    justify-content: center;
+    width: fit-content; /* Make button only as wide as its content */
+    margin: 0 auto; /* Center the button */
+}
+
+.submit-button .fas {
+    margin-right: 10px; /* Space between icon and text */
+}
+
+.submit-button:hover {
+    background-color: #4a6d91; /* Darker blue on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Adjustments (from previous example + new ones) */
+@media (max-width: 768px) {
+    .section-header-center h2 {
+        font-size: 2.2em;
+    }
+
+    .booking-service-block {
+        padding: 30px;
+    }
+
+    .booking-service-block h3 {
+        font-size: 1.8em;
+        /* flex-direction: column; This might stack the icon, keep as row if preferred */
+        /* align-items: flex-start; */
+    }
+
+    .booking-form {
+        grid-template-columns: 1fr; /* Single column layout for smaller screens */
+    }
+
+    .privacy-checkbox-group {
+        flex-direction: row; /* Keep row for checkbox */
+        justify-content: flex-start; /* Align left */
+        padding-left: 5px; /* Adjust padding if needed */
+    }
+
+    .submit-button {
+        width: 100%; /* Make button full width on small screens */
+        max-width: 300px; /* Limit max width for a nicer look */
+    }
+}
+
+@media (max-width: 576px) {
+    .section-header-center {
+        margin-bottom: 40px;
+    }
+
+    .section-header-center h2 {
+        font-size: 1.8em;
+    }
+
+    .booking-service-block {
+        padding: 20px;
+    }
+
+    .booking-service-block h3 {
+        font-size: 1.5em;
+    }
+
+    .form-group label {
+        font-size: 0.9em;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 12px 15px;
+        font-size: 0.9em;
+    }
+
+    .privacy-checkbox-group label {
+        font-size: 0.9em;
+    }
+
+    .privacy-checkbox-group input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+    }
+}
+/* Import Font Awesome for icons */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
+
+
+.main-footer {
+    background-color: #3b5998; /* Dark blue background from image */
+    color: #e0e0e0; /* Light text color */
+    padding: 40px 20px 20px; /* Top, horizontal, bottom padding */
+}
+
+.footer-content-wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 0.5fr; /* Adjust column widths as needed */
+    gap: 30px; /* Space between columns */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 40px; /* Space above copyright notice */
+}
+
+.footer-column {
+    text-align: left;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.footer-logo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: white; /* White background for the logo circle */
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.footer-logo span {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: white; /* White text for ZAHRIX */
+}
+
+.tagline {
+    font-size: 0.9em;
+    line-height: 1.5;
+    margin-bottom: 25px;
+    color: #c0c0c0;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.contact-item .icon-circle {
+    background-color: #5d7cb6; /* Slightly lighter blue for icon circle */
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0; /* Prevent icon from shrinking */
+}
+
+.contact-item .icon-circle i {
+    color: white; /* White icons */
+    font-size: 1em;
+}
+
+.contact-item p {
+    margin: 0;
+    font-size: 0.95em;
+    color: #e0e0e0;
+}
+
+.footer-column h4 {
+    font-size: 1.2em;
+    color: white;
+    margin-bottom: 20px;
+    position: relative; /* For the underline */
+    padding-bottom: 5px;
+}
+
+/* Underline for headings */
+.footer-column h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px; /* Adjust length of underline */
+    height: 2px;
+    background-color: #007bff; /* Blue underline */
+}
+
+.subscribe-form {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.subscribe-form input[type="email"] {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border: 1px solid #5d7cb6; /* Border color */
+    border-radius: 5px 0 0 5px;
+    background-color: white; /* White input background */
+    color: #333; /* Input text color */
+    outline: none;
+    font-size: 0.9em;
+}
+
+.subscribe-form input[type="email"]::placeholder {
+    color: #888;
+}
+
+.subscribe-form button {
+    background-color: #1a1a1a; /* Dark button background */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.subscribe-form button:hover {
+    background-color: #007bff; /* Blue on hover */
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 0.95em;
+    transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.social-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between social icons */
+    align-items: center; /* Center icons horizontally in their column */
+}
+
+.social-icon-circle {
+    background-color: #e0e0e0; /* Light background for social icons */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.social-icon-circle i {
+    color: #3b5998; /* Dark blue icon color */
+    font-size: 1.2em;
+}
+
+.social-icon-circle:hover {
+    background-color: white;
+}
+.social-icon-circle:hover i {
+    color: #007bff; /* Blue on hover for consistency */
+}
+
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Light separator line */
+    font-size: 0.85em;
+    color: #c0c0c0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .footer-content-wrapper {
+        grid-template-columns: 1fr 1fr; /* Two columns on medium screens */
+    }
+    .company-info {
+        grid-column: span 2; /* Company info spans two columns */
+        margin-bottom: 30px;
+    }
+    .subscribe-section,
+    .quick-links,
+    .useful-links,
+    .social-icons {
+        grid-column: span 1; /* Each takes one column */
+        margin-bottom: 30px;
+    }
+    .footer-column {
+        text-align: center; /* Center text for stacked columns */
+    }
+    .footer-logo {
+        justify-content: center; /* Center logo */
+    }
+    .contact-item {
+        justify-content: center; /* Center contact items */
+    }
+    .footer-column h4::after {
+        left: 50%;
+        transform: translateX(-50%); /* Center underline */
+    }
+    .social-icons {
+        flex-direction: row; /* Row for social icons on medium screens */
+        grid-column: span 2; /* Social icons span both columns */
+        justify-content: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-content-wrapper {
+        grid-template-columns: 1fr; /* Single column on small screens */
+    }
+    .company-info,
+    .subscribe-section,
+    .quick-links,
+    .useful-links,
+    .social-icons {
+        grid-column: span 1; /* All span full width */
+        margin-bottom: 25px;
+    }
+    .subscribe-form {
+        flex-direction: column; /* Stack input and button */
+        align-items: center;
+    }
+    .subscribe-form input[type="email"] {
+        border-radius: 5px;
+        width: 80%; /* Adjust width */
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    .subscribe-form button {
+        border-radius: 5px;
+        width: 80%; /* Adjust width */
+    }
+    .social-icons {
+        padding-bottom: 20px; /* Add space below social icons */
+    }
+}
+
+.ab{
+    position: relative;
+    opacity: 0.4;
+}
+
+.modal-content{
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    background-color: white;
+    color: black;
+    height: 50%;
+    text-align: center;
+
+}
+.modal-overlay{
+    height: 50%;
+
+}
+.modal-message{
+    color: black;
+    font-size: 20px;
+    padding: 3%;
+}
+
+.modal-close-btn{
+    background-color: black;
+    padding: 2%;
+    margin-right: -80%;
+    margin-top: 3%;
+    color: white;
+}
+.modal-button{
+
+    background-color: #5a7ea8;
+    width: 35%;
+    height: 10%;
+
+}

@@ -1,0 +1,1043 @@
+/* Global Styles & Font Imports */
+body {
+    font-family: 'Open Sans', sans-serif; /* Default font */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f8f8;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif; /* Headings font */
+    margin-top: 0;
+    line-height: 1.2;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Reusable classes */
+.lightning-icon {
+    color: #007bff; /* Blue for lightning bolt */
+    font-size: 0.9em; /* Adjust size relative to text */
+    vertical-align: super;
+}
+
+/* 1. Header/Navigation Bar */
+.main-header {
+    background-color: #3b5998; /* Dark blue background */
+    padding: 15px 20px;
+    color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.logo img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: white; /* White circle background */
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 30px;
+}
+
+.main-nav ul li a {
+    color: white;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    position: relative; /* For dropdown arrow */
+}
+
+.main-nav ul li a:hover {
+    color: #e0e0e0;
+}
+
+.main-nav ul li.dropdown {
+    position: relative;
+}
+
+.main-nav ul li.dropdown .fa-chevron-down {
+    font-size: 0.7em;
+    margin-left: 5px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--white);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px;
+    overflow: hidden;
+    top: 100%; /* Position below the Services link */
+    left: 0;
+}
+
+.dropdown-content a {
+    color: var(--text-dark);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--light-blue);
+    color: var(--primary-blue);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* .dropdown:hover .dropdown-content {
+    display: block; // Handled by JS for better control on hover
+} */
+
+.btn-quote {
+    background-color: white;
+    color: #007bff; /* Blue text for button */
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-quote:hover {
+    background-color: #e0e0e0;
+    color: #0056b3;
+}
+
+.hamburger-menu {
+    display: none; /* Hidden on desktop */
+    font-size: 1.8em;
+    cursor: pointer;
+}
+
+/* 2. Hero/Banner Section */
+.hero-section {
+    position: relative;
+    height: 400px; /* Adjust height as needed */
+    background: url('Images/Screenshot\ 2025-06-12\ 151859.png') center center/cover no-repeat; /* Placeholder for hero background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Dark overlay */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content .breadcrumb {
+    font-size: 1em;
+    margin-bottom: 10px;
+    color: #ccc;
+}
+
+.hero-content .breadcrumb .separator {
+    margin: 0 5px;
+}
+
+.hero-content h1 {
+    font-size: 3em;
+    margin: 0;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+/* 8. About Us Section (New) */
+.about-us-section {
+    padding: 60px 20px;
+    background-color: #f0f2f5; /* Light background */
+    position: relative; /* For potential background patterns */
+    overflow: hidden;
+}
+
+.about-us-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 250px; /* Adjust size of pattern */
+    height: 100%;
+    background: url('path/to/your/about-us-pattern.svg') top right / cover no-repeat; /* Replace with your specific pattern */
+    opacity: 0.05;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.about-us-content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 40px; /* Space between left and right columns */
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    position: relative;
+    z-index: 1;
+}
+
+.about-us-left {
+    flex: 1;
+    min-width: 300px;
+    max-width: 550px; /* Control max width */
+    position: relative; /* For the experience text */
+    padding-left: 100px; /* Space for the vertical text */
+}
+
+.experience-text {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%) rotate(-90deg); /* Rotate for vertical text */
+    transform-origin: left center;
+    white-space: nowrap;
+    color: #007bff; /* Blue color */
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.experience-text .years {
+    font-size: 3.5em; /* Large number */
+    line-height: 1;
+    color: #333; /* Darker color for number */
+}
+
+.experience-text .label {
+    font-size: 1.2em;
+    text-transform: uppercase;
+}
+
+.experience-text .sub-label {
+    font-size: 0.9em;
+    color: #555;
+}
+
+.about-us-image-container {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    position: relative;
+    width: 100%; /* Take full width of its container */
+    height: 450px; /* Fixed height for consistency */
+}
+
+.about-us-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.about-us-icon-overlay {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: #007bff; /* Blue circle */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.about-us-icon-overlay i {
+    color: white;
+    font-size: 1.5em;
+}
+
+.about-us-icon-overlay:hover {
+    background-color: #0056b3;
+}
+
+
+.about-us-right {
+    flex: 1;
+    min-width: 300px;
+    max-width: 650px; /* Control max width */
+    text-align: left;
+}
+
+.about-us-subheading {
+    font-size: 0.9em;
+    color: #007bff;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    position: relative;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+.about-us-subheading::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px; /* Underline length */
+    height: 2px;
+    background-color: #007bff;
+}
+
+.about-us-right h3 {
+    font-size: 1.5em;
+    color: #555;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.about-us-right h2 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 25px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.about-us-right p {
+    font-size: 1em;
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.team-section h4 {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.team-avatars {
+    display: flex;
+    gap: 10px;
+}
+
+.team-avatars img {
+    width: 300px;
+    height: 55px;
+    /* border-radius: 10%; */
+    object-fit: cover;
+     /* Blue border around avatars */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    /* Header */
+    .main-nav ul {
+        display: none; /* Hide nav on smaller screens initially */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 70px; /* Below header */
+        left: 0;
+        background-color: #3b5998;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        padding: 10px 0;
+        z-index: 9;
+    }
+
+    .main-nav ul.active {
+        display: flex; /* Show when active */
+    }
+
+    .main-nav ul li {
+        text-align: center;
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .main-nav ul li.dropdown .dropdown-content {
+        position: static; /* Remove absolute positioning for dropdown in mobile */
+        box-shadow: none;
+        background-color: #5d7cb6; /* Slightly different background for dropdown items */
+        margin-top: 5px;
+    }
+
+    .btn-quote {
+        display: none; /* Hide quote button in mobile nav */
+    }
+
+    .hamburger-menu {
+        display: block; /* Show hamburger icon */
+    }
+
+    /* Hero */
+    .hero-content h1 {
+        font-size: 2.2em;
+    }
+
+    /* About Us */
+    .about-us-content-wrapper {
+        flex-direction: column;
+    }
+    .about-us-left {
+        padding-left: 0; /* Remove padding */
+        width: 100%;
+        max-width: 550px;
+        margin-bottom: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center image and text */
+    }
+    .experience-text {
+        position: static; /* Remove absolute positioning */
+        transform: none; /* Remove rotation */
+        margin-bottom: 20px; /* Space below it */
+        flex-direction: row; /* Make it horizontal */
+        gap: 10px;
+        align-items: center;
+        text-align: center; /* Center the text */
+        justify-content: center;
+    }
+    .experience-text .years {
+        font-size: 2.5em; /* Adjust font size */
+    }
+    .experience-text .label, .experience-text .sub-label {
+        font-size: 1em;
+    }
+    .about-us-image-container {
+        width: 90%; /* Adjust image width */
+        height: 350px;
+    }
+    .about-us-right {
+        max-width: 90%;
+        text-align: center; /* Center content */
+    }
+    .about-us-subheading {
+        display: block;
+        text-align: center;
+    }
+    .about-us-subheading::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .team-avatars {
+        justify-content: center; /* Center team avatars */
+    }
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Who We Are Section Styling */
+.who-we-are {
+    padding: 80px 0;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.who-we-are-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #666;
+    letter-spacing: 1px;
+}
+
+.who-we-are-header .icon {
+    color: #007bff; /* A blue color for the lightning bolt, adjust as needed */
+    font-size: 1.2em;
+}
+
+.who-we-are h2 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    gap: 40px;
+    align-items: flex-start; /* Aligns items to the top */
+}
+
+.text-content {
+    flex: 2; /* Takes more space */
+    min-width: 300px; /* Minimum width before wrapping */
+}
+
+.text-content p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #555;
+}
+
+.image-content {
+    flex: 1; /* Takes less space, but allows for responsiveness */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* For potential overlay images */
+    min-width: 300px; /* Minimum width before wrapping */
+}
+
+.image-content .main-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px; /* Rounded corners for the image */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    object-fit: cover; /* Ensures image covers the area without distortion */
+   position: relative;
+}
+
+.image-content .main-image1{
+    position: absolute;
+    top: 40%;
+    left: -30%;
+}
+/* If you have an overlay image */
+/* .image-content .overlay-image {
+    position: absolute;
+    bottom: -20px;
+    left: -20px;
+    width: 150px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    z-index: 2;
+} */
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .content-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .text-content,
+    .image-content {
+        flex: none; /* Remove flex sizing */
+        width: 100%; /* Take full width */
+    }
+
+    .image-content {
+        order: -1; /* Move image above text on smaller screens */
+        margin-bottom: 30px;
+    }
+
+    .who-we-are h2 {
+        text-align: center;
+        font-size: 2em;
+    }
+
+    .who-we-are-header {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .who-we-are {
+        padding: 40px 0;
+    }
+
+    .who-we-are h2 {
+        font-size: 1.8em;
+    }
+
+    .text-content p {
+        font-size: 1em;
+    }
+}
+.content-section {
+    display: flex;
+    flex-wrap: wrap; /* Allows columns to wrap on smaller screens */
+    gap: 40px; /* Space between columns */
+    align-items: flex-start; /* Aligns content to the top */
+    padding: 40px 0;
+}
+
+.image-column {
+    flex: 1; /* Allows it to take available space */
+    min-width: 300px; /* Minimum width before wrapping */
+}
+
+.image-column img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px; /* Slight border-radius as seen in image */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.text-column {
+    flex: 2; /* Allows it to take more space than the image column */
+    min-width: 400px; /* Minimum width before wrapping */
+}
+
+.approach-header .small-heading {
+    color: black; /* A blue color for the "OUR APPROACH" text */
+    font-weight: bold;
+    font-size: 1.3em;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.approach-header .small-heading svg { /* If using SVG for lightning bolt */
+    margin-right: 8px;
+    fill: #007bff;
+}
+
+.approach-header h1 {
+    font-size: 2.5em;
+    color:#007bff; /* Darker heading color */
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Lighter shadow for cards */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align content to the left within the card */
+}
+
+.card-icon {
+    font-size: 2.5em;
+    color: #007bff; /* Icon color */
+    background-color: #e6f2ff; /* Light background for the icon circle */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.card h2 {
+    font-size: 1.8em;
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #007bff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .content-section {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .image-column, .text-column {
+        min-width: unset; /* Remove min-width for smaller screens */
+        width: 100%;
+    }
+
+    .approach-header h1 {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        padding: 20px;
+    }
+
+    .card h2 {
+        font-size: 1.5em;
+    }
+}
+
+/* --- Top Statistics Section --- */
+.stats-section {
+    background-color: #0d1a29; /* Dark blue background */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px 20px;
+    color: #fff;
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+    gap: 20px; /* Space between stat items */
+}
+
+.stat-item {
+    text-align: center;
+    flex: 1; /* Allows items to grow and shrink */
+    min-width: 180px; /* Minimum width before wrapping */
+    padding: 10px;
+    border-right: 1px solid rgba(255, 255, 255, 0.2); /* Separator line */
+}
+
+.stat-item:last-child {
+    border-right: none; /* No border for the last item */
+}
+
+.stat-number {
+    font-size: 2.8em;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #007bff; /* A distinct blue color for numbers */
+}
+
+.stat-text {
+    font-size: 1.1em;
+    opacity: 0.8;
+}
+
+
+
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) {
+    .stat-item {
+        border-right: none; /* Remove borders on smaller screens */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+    }
+    .stat-item:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+    }
+
+  
+
+    
+
+    
+}
+
+@media (max-width: 768px) {
+    .stats-section {
+        padding: 30px 10px;
+    }
+
+    .stat-number {
+        font-size: 2.2em;
+    }
+
+    .stat-text {
+        font-size: 1em;
+    }
+
+    
+}
+/* Import Font Awesome for icons */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
+
+
+.main-footer {
+    background-color: #3b5998; /* Dark blue background from image */
+    color: #e0e0e0; /* Light text color */
+    padding: 40px 20px 20px; /* Top, horizontal, bottom padding */
+}
+
+.footer-content-wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 0.5fr; /* Adjust column widths as needed */
+    gap: 30px; /* Space between columns */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 40px; /* Space above copyright notice */
+}
+
+.footer-column {
+    text-align: left;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.footer-logo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: white; /* White background for the logo circle */
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.footer-logo span {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: white; /* White text for ZAHRIX */
+}
+
+.tagline {
+    font-size: 0.9em;
+    line-height: 1.5;
+    margin-bottom: 25px;
+    color: #c0c0c0;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.contact-item .icon-circle {
+    background-color: #5d7cb6; /* Slightly lighter blue for icon circle */
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0; /* Prevent icon from shrinking */
+}
+
+.contact-item .icon-circle i {
+    color: white; /* White icons */
+    font-size: 1em;
+}
+
+.contact-item p {
+    margin: 0;
+    font-size: 0.95em;
+    color: #e0e0e0;
+}
+
+.footer-column h4 {
+    font-size: 1.2em;
+    color: white;
+    margin-bottom: 20px;
+    position: relative; /* For the underline */
+    padding-bottom: 5px;
+}
+
+/* Underline for headings */
+.footer-column h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px; /* Adjust length of underline */
+    height: 2px;
+    background-color: #007bff; /* Blue underline */
+}
+
+.subscribe-form {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.subscribe-form input[type="email"] {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border: 1px solid #5d7cb6; /* Border color */
+    border-radius: 5px 0 0 5px;
+    background-color: white; /* White input background */
+    color: #333; /* Input text color */
+    outline: none;
+    font-size: 0.9em;
+}
+
+.subscribe-form input[type="email"]::placeholder {
+    color: #888;
+}
+
+.subscribe-form button {
+    background-color: #1a1a1a; /* Dark button background */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.subscribe-form button:hover {
+    background-color: #007bff; /* Blue on hover */
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 0.95em;
+    transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.social-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between social icons */
+    align-items: center; /* Center icons horizontally in their column */
+}
+
+.social-icon-circle {
+    background-color: #e0e0e0; /* Light background for social icons */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.social-icon-circle i {
+    color: #3b5998; /* Dark blue icon color */
+    font-size: 1.2em;
+}
+
+.social-icon-circle:hover {
+    background-color: white;
+}
+.social-icon-circle:hover i {
+    color: #007bff; /* Blue on hover for consistency */
+}
+
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Light separator line */
+    font-size: 0.85em;
+    color: #c0c0c0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .footer-content-wrapper {
+        grid-template-columns: 1fr 1fr; /* Two columns on medium screens */
+    }
+    .company-info {
+        grid-column: span 2; /* Company info spans two columns */
+        margin-bottom: 30px;
+    }
+    .subscribe-section,
+    .quick-links,
+    .useful-links,
+    .social-icons {
+        grid-column: span 1; /* Each takes one column */
+        margin-bottom: 30px;
+    }
+    .footer-column {
+        text-align: center; /* Center text for stacked columns */
+    }
+    .footer-logo {
+        justify-content: center; /* Center logo */
+    }
+    .contact-item {
+        justify-content: center; /* Center contact items */
+    }
+    .footer-column h4::after {
+        left: 50%;
+        transform: translateX(-50%); /* Center underline */
+    }
+    .social-icons {
+        flex-direction: row; /* Row for social icons on medium screens */
+        grid-column: span 2; /* Social icons span both columns */
+        justify-content: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-content-wrapper {
+        grid-template-columns: 1fr; /* Single column on small screens */
+    }
+    .company-info,
+    .subscribe-section,
+    .quick-links,
+    .useful-links,
+    .social-icons {
+        grid-column: span 1; /* All span full width */
+        margin-bottom: 25px;
+    }
+    .subscribe-form {
+        flex-direction: column; /* Stack input and button */
+        align-items: center;
+    }
+    .subscribe-form input[type="email"] {
+        border-radius: 5px;
+        width: 80%; /* Adjust width */
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    .subscribe-form button {
+        border-radius: 5px;
+        width: 80%; /* Adjust width */
+    }
+    .social-icons {
+        padding-bottom: 20px; /* Add space below social icons */
+    }
+}
